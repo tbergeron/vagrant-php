@@ -21,11 +21,7 @@
     
 * Web server is accessible with http://13.37.13.37 (IP address can be changed in Vagrantfile)
 
-* Vagrant automatically setups database with this setup:
-
-    * Username: developer
-    * Password: password
-    * Database: developer
+* Vagrant automatically generate a MySQL root password in `/root/.my.cnf`
 
 ## Installed components
 

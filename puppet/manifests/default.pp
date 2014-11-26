@@ -50,14 +50,6 @@ class { "mysql":
     root_password => 'auto',
 }
 
-mysql::grant { 'developer':
-    mysql_privileges => 'ALL',
-    mysql_host => 'localhost',
-    mysql_db => 'developer',
-    mysql_user => 'developer',
-    mysql_password => 'password'
-}
-
 class php-setup {
 
     $php = ["php5-fpm", "php5-cli", "php5-dev", "php5-gd", "php5-curl", "php-apc", "php5-mcrypt", "php5-xdebug", "php5-sqlite", "php5-mysql", "php5-memcache", "php5-intl", "php5-tidy", "php5-imap", "php5-imagick"]
