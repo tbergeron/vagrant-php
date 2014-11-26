@@ -52,10 +52,10 @@ class { "mysql":
 
 mysql::grant { 'developer':
     mysql_privileges => 'ALL',
-    mysql_password => 'password',
+    mysql_host => 'localhost',
     mysql_db => 'developer',
     mysql_user => 'developer',
-    mysql_host => 'localhost',
+    mysql_password => 'password'
 }
 
 class php-setup {
@@ -92,11 +92,6 @@ class php-setup {
     package { "libmagickwand-dev":
         ensure => present,
         require => Package["imagemagick"],
-    }
-
-    package { "phpmyadmin":
-        ensure => present,
-        require => Package[$php],
     }
 
     file { '/etc/php5/cli/php.ini':
