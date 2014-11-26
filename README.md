@@ -21,7 +21,11 @@
     
 * Web server is accessible with http://13.37.13.37 (IP address can be changed in Vagrantfile)
 
+* Web files need to be put in `/vagrant/www`
+
 * Vagrant automatically generate a MySQL root password in `/root/.my.cnf`
+
+* Adminer is accessible via `http://13.37.13.37/adminer.php`
 
 ## Installed components
 
