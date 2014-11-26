@@ -69,11 +69,11 @@ class { "mysql":
     root_password => 'auto',
 }
 
-mysql::grant { 'symfony':
+mysql::grant { 'developer':
     mysql_privileges => 'ALL',
-    mysql_password => 'symfony-vagrant',
-    mysql_db => 'symfony',
-    mysql_user => 'symfony',
+    mysql_password => 'password',
+    mysql_db => 'developer',
+    mysql_user => 'developer',
     mysql_host => 'localhost',
 }
 
@@ -90,11 +90,6 @@ class php-setup {
         command => '/usr/bin/apt-get update',
         before => Package[$php],
         require => Exec['add-apt-repository ppa:ondrej/php5'],
-    }
-
-    package { "mongodb":
-        ensure => present,
-        require => Package[$php],
     }
 
     package { $php:
@@ -121,15 +116,6 @@ class php-setup {
     package { "phpmyadmin":
         ensure => present,
         require => Package[$php],
-    }
-
-    exec { 'pecl install mongo':
-        notify => Service["php5-fpm"],
-        command => '/usr/bin/pecl install --force mongo',
-        logoutput => "on_failure",
-        require => Package[$php],
-        before => [File['/etc/php5/cli/php.ini'], File['/etc/php5/fpm/php.ini'], File['/etc/php5/fpm/php-fpm.conf'], File['/etc/php5/fpm/pool.d/www.conf']],
-        unless => "/usr/bin/php -m | grep mongo",
     }
 
     file { '/etc/php5/cli/php.ini':
@@ -176,10 +162,6 @@ class php-setup {
         require => Package["php5-fpm"],
     }
 
-    service { "mongodb":
-        ensure => running,
-        require => Package["mongodb"],
-    }
 }
 
 class composer {

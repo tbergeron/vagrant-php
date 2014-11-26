@@ -1,4 +1,4 @@
-#Symfony 2 Vagrant Development setup
+#Vagrant PHP Development setup
 
 
 ## Installation
@@ -11,7 +11,7 @@
 
 * Clone this repository
 
-    ```$ git clone https://github.com/irmantas/symfony2-vagrant.git```
+    ```$ git clone https://github.com/tbergeron/vagrant-php.git```
     
 * install git submodules
     ```$ git submodule update --init```
@@ -25,9 +25,9 @@
 
 * Vagrant automatically setups database with this setup:
 
-    * Username: symfony
-    * Password: symfony-vagrant
-    * Database: symfony
+    * Username: developer
+    * Password: password
+    * Database: developer
 
 ## Installed components
 
@@ -35,7 +35,6 @@
 * [MySQL](http://www.mysql.com/) using puppet module from [example42](https://github.com/example42/puppet-mysql)
 * [PHP-FPM](http://php-fpm.org/) (PHP 5.4)
 * [PhpMyAdmin](http://www.phpmyadmin.net/home_page/index.php)
-* [MongoDB](http://www.mongodb.org/)
 * [Redis](http://redis.io/)
 * [GiT](http://git-scm.com/)
 * [Composer](http://getcomposer.org) installed globaly (use ```$ composer self-update``` to get the newest version)
@@ -65,26 +64,3 @@
 ## Hints
 ####Startup speed
 To speed up the startup process use ```$ vagrant up --no-provision``` (thanks to [caramba1337](https://github.com/caramba1337))
-
-####Install Symfony Standard edition
-* SSH to vagrant ```$ vagrant ssh```
-* Clone symfony standard edition to somewhere temporary
-    
-    ```$ git clone https://github.com/symfony/symfony-standard.git /tmp/symfony```
-    
-* Move symfony repository to server document root
-
-    ```$ mv /tmp/symfony/.git /vagrant/www/```
-
-* Reset repository to restore project files
-    
-    ```$ cd /vagrant/www && git reset --hard HEAD```
-
-* Install dependencies
-
-    ```$ cd /vagrant/www && composer update```
-    
-* Edit ```web/app_dev.php``` to allow host
-
-## TODO
-You tell me
