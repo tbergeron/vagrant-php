@@ -21,8 +21,6 @@
     
 * Web server is accessible with http://13.37.13.37 (IP address can be changed in Vagrantfile)
 
-* PhpMyAdmin is accessible with http://13.37.13.37/phpmyadmin
-
 * Vagrant automatically setups database with this setup:
 
     * Username: developer
@@ -34,7 +32,6 @@
 * [Nginx](http://nginx.org/en/) using puppet module from [example42](https://github.com/example42/puppet-nginx)
 * [MySQL](http://www.mysql.com/) using puppet module from [example42](https://github.com/example42/puppet-mysql)
 * [PHP-FPM](http://php-fpm.org/) (PHP 5.4)
-* [PhpMyAdmin](http://www.phpmyadmin.net/home_page/index.php)
 * [Redis](http://redis.io/)
 * [Git](http://git-scm.com/)
 * [Composer](http://getcomposer.org) installed globaly (use ```$ composer self-update``` to get the newest version)
