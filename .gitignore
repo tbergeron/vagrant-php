@@ -1,4 +1,5 @@
 www/*
+!www/adminer.php
 .vagrant
 *.sublime-project
 *.sublime-workspace

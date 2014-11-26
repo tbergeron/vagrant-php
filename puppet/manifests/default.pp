@@ -2,14 +2,12 @@ Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
 
 class system-update {
-
     exec { 'apt-get update':
         command => 'apt-get update',
     }
 }
 
 class dev-packages {
-
     include gcc
     include wget
 
@@ -18,11 +16,9 @@ class dev-packages {
         ensure => "installed",
         require => Exec['apt-get update'],
     }
-
 }
 
 class nginx-setup {
-    
     include nginx
 
     package { "python-software-properties":
@@ -51,7 +47,6 @@ class { "mysql":
 }
 
 class php-setup {
-
     $php = ["php5-fpm", "php5-cli", "php5-dev", "php5-gd", "php5-curl", "php-apc", "php5-mcrypt", "php5-xdebug", "php5-sqlite", "php5-mysql", "php5-memcache", "php5-intl", "php5-tidy", "php5-imap", "php5-imagick"]
 
     exec { 'add-apt-repository ppa:ondrej/php5':
@@ -129,7 +124,6 @@ class php-setup {
         ensure => running,
         require => Package["php5-fpm"],
     }
-
 }
 
 class composer {
