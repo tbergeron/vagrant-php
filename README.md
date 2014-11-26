@@ -36,22 +36,11 @@
 * [PHP-FPM](http://php-fpm.org/) (PHP 5.4)
 * [PhpMyAdmin](http://www.phpmyadmin.net/home_page/index.php)
 * [Redis](http://redis.io/)
-* [GiT](http://git-scm.com/)
+* [Git](http://git-scm.com/)
 * [Composer](http://getcomposer.org) installed globaly (use ```$ composer self-update``` to get the newest version)
-* [Vim](http://www.vim.org/)
 * [PEAR](http://pear.php.net/)
 * [cURL](http://curl.haxx.se/)
-* [Node.js](http://nodejs.org/)
-* [npm](https://npmjs.org/)
-* [less](http://lesscss.org/)
-* [OpenJDK](http://openjdk.java.net/)
-* [sass](http://sass-lang.com/)
-* [Compass](http://compass-style.org/)
 * [Imagic](http://www.imagemagick.org/script/index.php)
-* [Capistrano](https://github.com/capistrano/capistrano)
-* [Capifony](http://capifony.org/)
-* [phpqatools](http://phpqatools.org/) using puppet module from ([https://github.com/rafaelfelix/puppet-phpqatools](https://github.com/rafaelfelix/puppet-phpqatools))
-* [memcached](http://memcached.org/)
 
 ## Thanks to
 

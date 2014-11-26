@@ -13,31 +13,12 @@ class dev-packages {
     include gcc
     include wget
 
-    $devPackages = [ "vim", "curl", "git", "nodejs", "npm", "capistrano", "rubygems", "openjdk-7-jdk", "libaugeas-ruby" ]
+    $devPackages = [ "curl", "git" ]
     package { $devPackages:
         ensure => "installed",
         require => Exec['apt-get update'],
     }
 
-    exec { 'install less using npm':
-        command => 'npm install less -g',
-        require => Package["npm"],
-    }
-
-    exec { 'install capifony using RubyGems':
-        command => 'gem install capifony',
-        require => Package["rubygems"],
-    }
-
-    exec { 'install sass with compass using RubyGems':
-        command => 'gem install compass',
-        require => Package["rubygems"],
-    }
-
-    exec { 'install capistrano_rsync_with_remote_cache using RubyGems':
-        command => 'gem install capistrano_rsync_with_remote_cache',
-        require => Package["capistrano"],
-    }
 }
 
 class nginx-setup {
@@ -177,12 +158,6 @@ class composer {
     }
 }
 
-class memcached {
-    package { "memcached":
-        ensure => present,
-    }
-}
-
 class { 'apt':
     always_apt_update    => true
 }
@@ -194,6 +169,4 @@ include dev-packages
 include nginx-setup
 include php-setup
 include composer
-include phpqatools
-include memcached
 include redis
